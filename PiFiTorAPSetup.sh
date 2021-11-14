@@ -41,13 +41,13 @@ then
 fi
 echo ""
 echo "Downloading and installing necessary packages.."
-sudo apt install hostapd dnsmasq tor -y
+sudo apt install hostapd dnsmasq tor iptables -y
 echo ""
 echo "Checking..."
 if [ ! -f /etc/tor/torrc ]
         then
                 sudo apt update --fix-missing
-                sudo apt install hostapd dnsmasq tor -y
+                sudo apt install hostapd dnsmasq tor iptables -y
 fi
 echo ""
 echo "configuration start..."
@@ -134,7 +134,9 @@ sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 sudo touch /var/log/tor/notices.log
 sudo chown debian-tor /var/log/tor/notices.log
 sudo chmod 644 /var/log/tor/notices.log
-sudo service hostapd start
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
+sudo systemctl start hostapd
 sudo service dnsmasq start
 sudo service tor start
 sudo update-rc.d tor enable
