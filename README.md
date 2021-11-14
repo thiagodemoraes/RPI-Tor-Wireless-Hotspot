@@ -31,3 +31,6 @@ Putty
 
 Watch following video for PiFiTorAP setup
 https://www.youtube.com/watch?v=lyjlr5kSosI
+
+check tor projetct 
+https://check.torproject.org/?lang=en.
