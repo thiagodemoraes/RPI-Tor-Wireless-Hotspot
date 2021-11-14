@@ -98,7 +98,7 @@ if [ ! -f /etc/dhcpcd.conf.oldtc ]
         else
         sudo rm /etc/dhcpcd.conf
 fi
-sudo cp config/dhcpcd.conf /etc/
+sudo cp ./config/dhcpcd.conf /etc/dhcpcd.conf
 sudo systemctl restart dhcpcd
 if [ ! -f /etc/dnsmasq.conf.oldtc ]
         then
@@ -106,7 +106,7 @@ if [ ! -f /etc/dnsmasq.conf.oldtc ]
         else
         sudo rm /etc/dnsmasq.conf
 fi
-sudo cp config/dnsmasq.conf /etc/dnsmasq.conf
+sudo cp  ./config/dnsmasq.conf /etc/dnsmasq.conf
 if [ ! -f /etc/sysctl.conf.oldtc ]
         then
         sudo cp /etc/sysctl.conf /etc/sysctl.conf.oldtc
